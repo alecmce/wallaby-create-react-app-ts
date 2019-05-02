@@ -5,6 +5,8 @@ module.exports = function(wallaby) {
   process.env.NODE_PATH += path.delimiter + path.join(__dirname, 'node_modules') + path.delimiter + path.join(__dirname, 'node_modules/react-scripts/node_modules');
   require('module').Module._initPaths();
 
+  process.env.BABEL_ENV = 'test'
+  
   return {
     files: [{ pattern: 'src/setupTests.ts', instrument: false }, 'src/**/*.+(ts|tsx|jsx|json|snap|css|less|sass|scss|jpg|jpeg|gif|png|svg)', '!src/**/*.test.ts?(x)'],
 
